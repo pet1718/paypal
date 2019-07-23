@@ -26,6 +26,11 @@ class RestResponse extends AbstractResponse
         return empty($this->data['error']) && $this->getCode() < 400;
     }
 
+    public function getTransactionNo()
+    {
+        return $this->getTransactionReference();
+    }
+
     public function getTransactionReference()
     {
         // This is usually correct for payments, authorizations, etc
